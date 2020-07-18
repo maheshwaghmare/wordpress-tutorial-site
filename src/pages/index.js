@@ -1,14 +1,9 @@
 import React from "react"
 import { Link, graphql  } from "gatsby"
 
-import contentParser from 'gatsby-wpgraphql-inline-images';
-
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-
-const wordPressUrl = 'http://localhost/dev.test/';
-const uploadsUrl = 'http://localhost/dev.test/wp-content/uploads/';
 
 const IndexPage = ( {data}) => {
   console.log( data )
@@ -24,7 +19,7 @@ const IndexPage = ( {data}) => {
           <Link to={node.slug}>
             <p>{node.title}</p>
           </Link>
-          <div>{contentParser( node.content, { wordPressUrl, uploadsUrl })}</div>
+          <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
         </div>
       ))}
 

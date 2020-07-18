@@ -45,6 +45,10 @@ module.exports = {
         uploadsUrl: 'http://localhost/dev.test/wp-content/uploads/',
         processPostTypes: ['Page', 'Post', 'CustomPost'],
         graphqlTypeName: 'WPGraphQL',
+        postTypes: [
+          'page',
+          'post'
+        ]
         // httpHeaders: {
         //   Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         // }
