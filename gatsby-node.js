@@ -18,6 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
             excerpt
             content
             slug
+            uri
         }
       }
     }

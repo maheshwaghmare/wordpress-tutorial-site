@@ -38,6 +38,18 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-wpgraphql-inline-images',
+      options: {
+        wordPressUrl: 'http://localhost/dev.test/',
+        uploadsUrl: 'http://localhost/dev.test/wp-content/uploads/',
+        processPostTypes: ['Page', 'Post', 'CustomPost'],
+        graphqlTypeName: 'WPGraphQL',
+        // httpHeaders: {
+        //   Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        // }
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
