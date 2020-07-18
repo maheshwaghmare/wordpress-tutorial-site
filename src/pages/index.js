@@ -12,12 +12,17 @@ const IndexPage = ( {data}) => {
       <SEO title="Home" />
       <h1>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
+      
+      <h4>All Posts</h4>
       {data.allWpPost.nodes.map((node) => (
-          <div className="article">
-            <h2>{node.title}</h2>
-            <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-          </div>
-        ))}
+        <div className="article" key={node.slug}>
+          <Link to={node.slug}>
+            <p>{node.title}</p>
+          </Link>
+          <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+        </div>
+      ))}
+
       <p>Now go build something great.</p>
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />
